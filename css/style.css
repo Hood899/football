@@ -63,5 +63,9 @@ body {
   .football {
     height: 50vh;
   }
+   .football span img{
+    width: 100px;
+    height: 150px;
+  }
 }
 
