@@ -1,0 +1,67 @@
+/* Add all your styles here */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box ;
+}
+
+body {
+    display: flex;
+    align-items: center ;
+    justify-content: center;
+    background: url('https://www.gmp.de/images/3922_Perspektive_c10_night.jpg?w=1600');
+    background-size: cover ;
+    overflow: hidden;
+    height: 100vh;
+}
+
+.football  {
+  width: 200px;
+  height: 250px;
+  position: relative;
+  animation: ball 30s linear infinite ;
+  transform-style: preserve-3d;
+}
+
+@keyframes ball {
+  0% {
+    transform: perspective(1000px) rotateY(0deg);
+  }
+  100% {
+    transform: perspective(1000px) rotateY(360deg);
+  }
+}
+
+
+.football span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform-origin: center;
+  transform-style: preserve-3d;
+  transform: rotateY(calc(var(--i) * 30deg)) translateZ(400px);
+
+}
+
+
+.football span img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover ;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: 1s;
+  border-radius:  3px;
+}
+
+
+@media screen and (max-width: 768px) {
+  .football {
+    height: 50vh;
+  }
+}
+
